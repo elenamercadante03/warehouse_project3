@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Manager 3.0</title>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='custom-styles.css') }}">
+</head>
+<body>
+
+<div class="container box">
+  <div class="columns">
+    <div class="column col-3"></div>
+
+    <div class="column col-6">
+
+      <header class="navbar">
+        <section class="navbar-section">
+          <a href="/" class="navbar-brand mr-2">
+            <div id="logo-header">Stock Manager 3.0</div>
+          </a>
+          <a href="/" class="btn btn-link">Home</a>
+          <a href="/purchase/" class="btn btn-link">Purchase</a>
+          <a href="/sale/" class="btn btn-link">Sale</a>
+          <a href="/balance/" class="btn btn-link">Balance</a>
+          <a href="/history/" class="btn btn-link">History</a>
+        </section>
+      </header>
+
+      <div class="hero">
+        <div class="hero-body">
+          <h1>Stock and Accounting System</h1>
+          <p>This application helps to manage products, sales, purchases and money balance.</p>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column col-6">
+          <div class="card">
+            <div class="card-header">
+              <h4>Current stock level</h4>
+            </div>
+
+            <div class="card-body">
+              {% for product in warehouse %}
+                <p>Product: {{ product.name }}</p>
+                <p>Quantity: {{ product.quantity }} pieces</p>
+                <hr>
+              {% endfor %}
+            </div>
+
+          </div>
+        </div>
+
+        <div class="column col-6">
+          <div class="card">
+            <div class="card-header">
+              <h4>Current account balance</h4>
+            </div>
+            <div class="card-body">
+              <p>Balance: {{ balance }} PLN</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column col-4">
+          <a href="/purchase/" class="btn btn-primary btn-block">Purchase</a>
+        </div>
+        <div class="column col-4">
+          <a href="/sale/" class="btn btn-primary btn-block">Sale</a>
+        </div>
+        <div class="column col-4">
+          <a href="/balance/" class="btn btn-primary btn-block">Balance</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="column col-3"></div>
+  </div>
+</div>
+
+</body>
+</html>
+

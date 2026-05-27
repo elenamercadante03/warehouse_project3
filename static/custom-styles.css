@@ -1,0 +1,34 @@
+body {
+    background-color: #f6f4ec;
+}
+
+#logo-header {
+    font-family: Arial;
+    font-size: 25px;
+    font-weight: bold;
+    color: #1f6f4a;
+}
+
+.box {
+    margin-top: 20px;
+}
+
+.hero {
+    background-color: #e4f2e8;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #1f6f4a;
+    border-color: #1f6f4a;
+}
+
+.card {
+    background-color: white;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
